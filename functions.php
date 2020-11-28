@@ -29,11 +29,13 @@
 
 		//CSS MDB charger
 		wp_register_style('mdb', 'https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css', [
-			"fontAwesome", "googleFonts","bootstrap"
+			"massEffect","fontAwesome", "googleFonts","bootstrap"
 		]);
 		wp_register_style('bootstrap', 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css');
 		wp_register_style('googleFonts', 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 		wp_register_style('fontAwesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+		//css perso
+		wp_register_style('massEffect', 'assets/css/me.css');
 
 
 		//décharger le jquery de wordpress

@@ -1,38 +1,37 @@
 <?php get_header() ?>
 
 <?php if ( have_posts() ): ?>
-    <div class="row">
-		<?php while ( have_posts() ): the_post(); ?>
-            <div class="col-md-4 md-4">
-                <div class="card">
-                    <!--Card image-->
-                    <div class="view overlay">
-                        <img src="<?php the_post_thumbnail_url(); ?>" class="card-img-top" alt="">
-                        <a>
-                            <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                        </a>
-                    </div>
-                    <!--/.Card image-->
-                    <!--Card content-->
-                    <div class="card-body">
-                        <!--Title-->
-                        <h4 class="card-title"><strong><?php the_title() ?></strong></h4>
-                        <hr>
-                        <!--Text-->
-                        <p class="card-text mb-3">
-							<?php the_excerpt(); ?>
-                        </p>
-                        <p class="font-small font-weight-bold dark-grey-text mb-1"><i class="far fa-clock-o"></i>
-							<?php the_date(); ?>
-                        </p>
-                        <p class="font-small grey-text mb-0"><?php the_author() ?></p>
-                        <p class="text-right mb-0 font-small font-weight-bold"><a href="<?php the_permalink(); ?>"> <i class="fas fa-align-left"></i> lire plus<i class="fas fa-angle-right"></i></a></p>
-                    </div>
-                    <!--/.Card content-->
+
+	<?php while ( have_posts() ): the_post(); ?>
+        <div class="container my-5 py-5 z-depth-1">
+        <div class="px-md-5 mx-md-5 dark-grey-text text-center text-lg-left">
+            <div class="row">
+
+            <div class="col-lg-6 mb-4 mb-lg-0 d-flex align-items-center justify-content-center">
+                <img src="<?php the_post_thumbnail_url();?>" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="font-weight-bold">
+					<?php the_title()?>
+                </div>
+                <div class="text-muted">
+	                <?php the_excerpt(); ?>
+                </div>
+                <div class="font-weight-bold">
+                    <div><?php the_author()?></div>
+                    <div><?php the_date()?></div>
                 </div>
             </div>
-		<?php endwhile; ?>
-    </div>
+            </div>
+            <div class="row">
+                <div class="col"><?php the_category();?></div>
+                <div class="col"><a href="<?php the_permalink();?>" class="font-weight-bold"><i class="fas fa-align-left"></i> lire plus<i class="fas fa-angle-right"></i></a></div>
+            </div>
+
+        </div>
+        </div>
+	<?php endwhile; ?>
+
 <?php else: ?>
     <h1>Pas d'articles</h1>
 <?php endif; ?>
