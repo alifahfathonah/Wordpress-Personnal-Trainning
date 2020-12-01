@@ -11,6 +11,13 @@
 	function cp_add_supports_theme(){
 		add_theme_support('title-tag');
 		add_theme_support('menus');
+
+		register_nav_menus(
+			array(
+				"Principal"  => __( 'topNavMenu', 'Menu dans la bar de Navigation' ),
+				"Secondaire" => __( 'middleMenu', 'Menu de la Sidebar' ),
+				"Footer"     => __( 'footMenu', 'Menu en pied de page' ),
+			) );
 		add_theme_support('post-thumbnails');
 		add_theme_support('custom-logo',
 			array(
@@ -67,6 +74,26 @@
 		return "|";
 	}
 
+/**
+ * recupere le tableau ce class des menu
+ * sur le hook 'nav_menu_css_class'
+ * et donne a chaque <li></li> la class "nav-item
+ */
+	function cp_add_menu_item($arrayOfClass){
+		$arrayOfClass[] = "nav-item";
+		return $arrayOfClass;
+	}
+/**
+ * recupere le tableau d'attribut a mettre a chaque lien des menu
+ * sur le hook ''nav_menu_link_attributes''
+ * on ajoute alors un attibut "class" qui a pour valeur "nav-link"
+ * class="nav-link"
+ */
+	function cp_add_link_attributes($arrayOfAttr){
+		$arrayOfAttr["class"] = "nav-link";
+		return $arrayOfAttr;
+	}
+
 /****************************************
  *  (')_(')                    (')_(')  *
  *  (='.'=)       Hooks        (='.'=)  *
@@ -76,3 +103,5 @@
 add_action('after_setup_theme', 'cp_add_supports_theme');
 add_action('wp_enqueue_scripts', 'cp_register_style_scripts');
 add_filter('document_title_separator', 'cp_title_separator');
+add_filter('nav_menu_css_class', 'cp_add_menu_item');
+add_filter('nav_menu_link_attributes', 'cp_add_link_attributes');
