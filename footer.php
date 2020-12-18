@@ -1,6 +1,6 @@
-</div> <!--  fermeture de la div container-->
 
-<footer class="page-footer font-small blue pt-4">
+
+<footer class="page-footer font-small unique-color pt-4">
 
     <!-- Footer Links -->
     <div class="container-fluid text-center text-md-left">
@@ -13,7 +13,7 @@
 
                 <!-- Content -->
                 <h5 class="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
+                <p>Mon avenir avec wordpress est incertain... mais rien ne m'empechera de "jouer avec"!</p>
 
             </div>
             <!-- Grid column -->
@@ -59,7 +59,7 @@
 </footer>
 <!-- Footer -->
 
-
+</div> <!--  fermeture de la div container-->
 <?php wp_footer() ?>
 </body>
 </html>

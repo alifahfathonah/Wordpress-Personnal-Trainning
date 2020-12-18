@@ -10,7 +10,7 @@
     </head>
     <body>
         <nav>
-            <nav class="navbar navbar-expand-lg navbar-dark rgba-indigo-strong">
+            <nav class="navbar navbar-expand-lg navbar-dark indigo">
 
                 <a class="navbar-brand" href="<?= home_url('/'); ?>"><strong><?php bloginfo( 'name' ); ?></strong></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,4 +27,5 @@
             </nav>
 
         </nav>
-        <div class="container"> <!-- Div qui se ferme dans le footer -->
+        <!-- Div qui se ferme dans le footer -->
+        <div class="container"> 
